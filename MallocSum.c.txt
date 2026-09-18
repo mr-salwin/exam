@@ -1,0 +1,20 @@
+MallocSum.c
+#include<stdio.h>
+#include<stdlib.h>
+void main(){
+int *p;
+int s,sum;
+printf("Enter the size of the element: ");
+scanf("%d",&s);
+p=(int*)malloc(s *sizeof(int));
+if(p==NULL){
+printf("Memory not allocated");
+}else{
+printf("Enter %d elements: ",s);
+for(int i=0;i<s;i++){
+scanf("%d",&p[i]);}
+printf("The sum of elements of the array is:\n");
+for(int j=0;j<s;j++){
+sum=sum + p[j];}
+printf("Sum= %d\n",sum);
+free(p);}}

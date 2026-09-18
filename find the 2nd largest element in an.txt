@@ -1,0 +1,29 @@
+find the 2nd largest element in an array
+#include<stdio.h>
+#include<stdlib.h>
+void main(){
+int *p;
+int s;
+printf("Enter the size of the element: ");
+scanf("%d",&s);
+p=(int*)malloc(s *sizeof(int));
+if(p==NULL){
+printf("Memory not allocated");
+}else{
+printf("Enter %d elements: ",s);
+for(int i=0;i<s;i++){
+scanf("%d",&p[i]);}
+
+for(int i=0;i<s;i++){
+for(int j=0;j<s-1;j++){
+if(p[j]<p[j+1]){
+int t=p[j];
+p[j]=p[j+1];
+p[j+1]=t;
+}}}
+printf("Array: ");
+for(int i=0;i<s;i++){
+printf("%d ",p[i]);}
+printf("\nSecond largest element is: %d\n",p[1]);
+
+Free(p);}}
